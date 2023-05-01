@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Devamsızlık Durumu</h1>
+<hr>
+<table class="table">
+    <thead>
+      <tr class="bg-warning">
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Öğrenci</th>
+        <th scope="row">Ders</th>
+        <th scope="row">Devamsızlık</th>
+      </tr>
+    </tbody>
+    <tbody>
+      {% for dis in discont%}
+        <tr>
+            <td>{{dis.student}}</td>
+            <td>{{dis.lesson}}</td>
+            <td>{{dis.days}}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+{% endblock %}

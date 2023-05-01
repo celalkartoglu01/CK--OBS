@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+ 
+
+{% block body %}
+{% if announcement %}
+<h4>{{announcement.title}}</h4>
+<hr>
+Yayınlayan Fakülte : {{announcement.faculty}}
+<hr>
+Tarih : {{announcement.created_date}}
+<hr>
+{{announcement.content|safe}}
+{% else %}
+<div class = "alert alert-warning">
+    Böyle bir duyuru bulunmuyor.
+</div>
+{% endif %}
+{% endblock %}

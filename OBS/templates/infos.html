@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Not Bilgileri</h1>
+<hr>
+
+
+<table class="table">
+    <thead>
+      <tr class="bg-success">
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Öğrenci</th>
+        <th scope="row">Ders</th>
+        <th scope="row">Vize Notu</th>
+        <th scope="row">Final Notu</th>
+      
+      </tr>
+    </tbody>
+    <tbody>
+        {% for notee in note  %}
+        <tr>
+            <td>{{notee.student}}</td>
+            <td>{{notee.lesson}}</td>
+            <td>{{notee.exam1}}</td>
+            <td>{{notee.exam2}}</td>
+        </tr>
+        
+        {% endfor %}
+      
+    
+    </tbody>
+  </table>
+{% endblock%}

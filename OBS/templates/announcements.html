@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Duyurular</h1>
+<hr>
+{% if announcements %}
+<ul class="list-group">
+{% for announcement in announcements  %}
+<li class = "list-group-item"><a href="announcement/{{announcement.id}}">{{announcement.title}}</a></li>
+
+{% endfor %}
+  </ul>
+
+{% else %}
+<div class = "alert alert-danger">Henüz duyuru yayınlanmadı.</div>
+{% endif %}
+{% endblock%}

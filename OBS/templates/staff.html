@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Akademik Kadro</h1>
+<hr>
+
+<table class="table">
+    <thead>
+      <tr class="bg-primary">
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">id</th>
+        <th scope="row">Adı</th>
+        <th scope="row">Soyadı</th>
+        <th scope="row">Bölümü</th>
+        <th scope="row">Ünvanı</th>
+      
+      </tr>
+    </tbody>
+    <tbody>
+        {% for staff1 in staff  %}
+        <tr>
+          <td>{{staff1.id}}</td>
+            <td>{{staff1.name}}</td>
+            <td>{{staff1.surname}}</td>
+            <td>{{staff1.section}}</td>
+            <td>{{staff1.title}}</td>
+        </tr>
+        
+        {% endfor %}
+      
+    
+    </tbody>
+  </table>
+
+{% endblock %}

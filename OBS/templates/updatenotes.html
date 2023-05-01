@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Not Güncelleme Paneli</h1>
+<hr>
+<a href="/addnotes" class="btn btn-primary">Not Ekle</a>
+<br><br><br>
+
+<table class="table">
+    <thead>
+      <tr class="bg-info">
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope = "col"></th>
+        <th scope = "col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">id</th>
+        <th scope="row">Öğrenci</th>
+        <th scope="row">Ders</th>
+        <th scope="row">Vize</th>
+        <th scope="row">Final</th>
+  
+      
+      </tr>
+    </tbody>
+    <tbody>
+        {% for note in notes  %}
+        <tr>
+            <td>{{note.id}}</td>
+            <td>{{note.student}}</td>
+            <td>{{note.lesson}}</td>
+            <td>{{note.exam1}}</td>
+            <td>{{note.exam2}}</td>
+            <td><a href="/edit/{{note.id}}" class = "btn btn-primary">Güncelle</a></td>
+        </tr>
+        
+        {% endfor %}
+      
+    
+    </tbody>
+  </table>
+
+{% endblock%}

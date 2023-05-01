@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Devamsızlık Güncelle</h1>
+<hr>
+<a href="/adddiscontinuity" class="btn btn-primary">Devamsızlık Ekle</a>
+<br><br><br>
+
+<table class="table">
+    <thead>
+      <tr class="bg-danger">
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Öğrenci</th>
+        <th scope="row">Ders</th>
+        <th scope="row">Devamsızlık</th>
+      </tr>
+    </tbody>
+    <tbody>
+        {% for discontt in disconts  %}
+        <tr>
+            <td>{{discontt.student}}</td>
+            <td>{{discontt.lesson}}</td>
+            <td>{{discontt.days}}</td>
+            <td><a href="/editdiscontinuty" class = "btn btn-primary">Güncelle</a></td>
+        </tr>
+        
+        {% endfor %}
+      
+    
+    </tbody>
+  </table>
+{% endblock %}

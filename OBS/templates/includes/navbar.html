@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/">CKÜ OBS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        {% if session["logged_in"] %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/infos">Not Bilgileri</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/discontinuity">Devamsızlık Durumu</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/syllabus">Ders Programı</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/exams">Sınav Takvimi</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/advisor">Danışman Bilgieri</a>
+        </li>
+        {% elif session["logged_in2"] %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/updatenotes">Not Güncelle</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/updatediscontinuty">Devamsızlık Güncelle</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/addannouncement">Duyuru Ekle</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/updatestaff">Akademik Kadroyu Güncelle</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/staff2">Akademik Kadro</a>
+        </li>
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/announcements">Duyurular</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/calendar">Akademik Takvim</a>
+          </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/about">Üniversitemiz</a>
+        </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/staff">Akademik Kadro</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/communication">İletişim</a>
+          </li>
+          {% endif %}
+
+      </ul>
+        
+       
+
+      <ul class="navbar-nav ml-auto">
+        {% if session["logged_in"]%}
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Çıkış Yap</a>
+        </li>
+        {% elif session["logged_in2"] %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Çıkış Yap</a>
+        </li>
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/login2">Yönetici Girişi</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Giriş Yap</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/register">Kayıt Oluştur</a>
+        </li>
+        
+        {% endif %}
+        
+         
+        
+   
+      </ul>
+    </div>
+  </nav>
